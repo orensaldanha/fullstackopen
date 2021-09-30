@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 const Button = ({ text, handleClick }) => 
   <button onClick={handleClick}>{text}</button>
 
-const Display = ({ text, counter }) => 
-  <div>{text} {counter}</div>
+const StatisticLine = ({ text, value }) => 
+  <div>{text} {value}</div>
 
 const Statistics = ({ good, neutral, bad }) => {
   const all = good + neutral + bad
@@ -16,11 +16,11 @@ const Statistics = ({ good, neutral, bad }) => {
   }
   return (
     <div>
-      <Display text='good' counter={good} />
-      <Display text='neutral' counter={neutral} />
-      <Display text='bad' counter={bad} />
-      <Display text='all' counter={all} />
-      <div>average {(good - bad)/all}</div>
+      <StatisticLine text='good' value={good} />
+      <StatisticLine text='neutral' value={neutral} />
+      <StatisticLine text='bad' value={bad} />
+      <StatisticLine text='all' value={all} />
+      <StatisticLine text='average' value={(good - bad)/all}/>
       <div>performance {(good / all) * 100} %</div>
     </div>
   )
