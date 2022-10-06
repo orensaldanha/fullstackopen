@@ -8,7 +8,7 @@ interface Result {
     average: number
 }
 
-const calculateExercises = (daily_exercise: Array<number>, target: number): Result => {
+export const calculateExercises = (daily_exercise: Array<number>, target: number): Result => {
     const result: Result = {
         periodLength: daily_exercise.length,
         trainingDays: 0,
@@ -17,10 +17,10 @@ const calculateExercises = (daily_exercise: Array<number>, target: number): Resu
         ratingDescription: "",
         target: target,
         average: 0
-    }
+    };
 
-    let sum: number = 0;
-    let trainingDaysCount: number = 0;
+    let sum = 0;
+    let trainingDaysCount = 0;
     daily_exercise.forEach((hours) => {
         sum += hours;
 
@@ -31,7 +31,7 @@ const calculateExercises = (daily_exercise: Array<number>, target: number): Resu
     result.trainingDays = trainingDaysCount;
     result.average = sum / result.periodLength;
 
-    return result
-}
+    return result;
+};
 
-console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2))
+//console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2));
