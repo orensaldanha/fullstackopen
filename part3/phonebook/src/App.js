@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import personService from './services/persons'
 
 const Notification = ({ message }) => {
+
   if (message !== null) {
     const messageColor = message.type === 'error' ? 'red' : 'green'
 
